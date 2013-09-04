@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+    <ul>
+        <li><a href="/admin/">Admin Page</a></li>
+        <li><a href="/rooms/">Rooms</a></li>
+        <li><a href="/rooms/">Cancel</a></li>
+        <li><a href="/users/">Users</a></li>
+    </ul>
+    
+{% endblock %}
+
+{% block content %}
+
+    <form action="/rooms/create/" method="post">{% csrf_token %}
+        <ul>
+            {{ form.as_ul }}
+        </ul>
+        <input type="submit" name="submit" value="Add Room">
+    </form>
+
+{% endblock %}
